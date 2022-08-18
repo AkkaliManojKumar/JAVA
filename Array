@@ -1,0 +1,40 @@
+---------- array size cannot be resized----------
+
+int[] marks = new int[5];
+
+marks = new int [10];  // we think that array resized but it will take totally a new array block
+
+int[] marks = new int[] {1,3,4,2,2,1,3};
+syso(marks[2]) -----> 4
+
+marks = new int[10];
+syo(marks[2])---------> 0 coz it is newly initiated array;
+
+
+
+-------------------------------------------------------------   Break String in to charector   -------------------------------------------
+
+
+public class Day6Demos {
+
+	public int capsCount(String str)
+	{
+		char[] ar=str.toCharArray();         // converts string into charector(---- toCharArray() this is the method used----------------)
+		
+		for(char a:ar)
+		{
+			System.out.println(a);
+		}
+		
+		return 0;
+	}
+	
+	
+	public static void main(String[] args) {
+	
+		String x="HeLlo";
+		new Day6Demos().capsCount(x);
+    
+	}
+
+}
