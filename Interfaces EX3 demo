@@ -51,3 +51,20 @@ public class Day5 {
 	
 	}
 }
+----------------------------------------------------------------------------------------------------
+Multiple inheritance is possible in JAVA like below
+
+
+interface hello{
+//--------some code-----
+}
+interface bagunnava{          
+
+// ---------some code----------
+
+}
+interface greet extends hello,bagunnava{
+
+// some code (where an interface extends multiple inteerfaces)
+
+}
