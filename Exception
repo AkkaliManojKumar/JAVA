@@ -1,0 +1,49 @@
+try{
+     syso(10/0)
+     }
+   catch (Arthametic Exception e){
+   syso( exception occured )
+   }
+   
+ --------------------------------------------------
+ try{
+       syso(110/0)
+       }
+ catch ( Exception e){             // here if we dont know what type of exception occured we can only write( Exception ) no need to specify it 
+                                   // but this only Exception should be wirtten at last only
+                                   // after try block there must be catch block
+            
+       syso(exception occured bhayya )
+       }
+       
+      ---------------------------------------------------------- finally block ------------------------------------------------------------------
+      
+      
+      Ex :
+      
+      int test(){
+      
+      try {
+         syso( 10/0)
+         return 1;                 // if return is there then program will END at there only next blocks will not be printed so to avoid this FINALLY is introduced
+         }
+       catch (Exception e){
+             syso( catch block printed  );
+          return -1;       
+           }
+          finally{
+          syso("finally block printed');
+       }
+       
+       
+     public static void main()
+     {
+       class obj = new class();
+       obj.test();
+       
+       =========== OUT PUT WILL BE   ... > catch block printed
+                                            finally block printed
+                                            1                 ---- return value
+                                            // what happens means first control comes to try and then catch 
+                                            // then it will go to finally then after it will go to return statement 
+                      
