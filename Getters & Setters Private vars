@@ -1,0 +1,50 @@
+First create one class with out main method 
+
+public class student{
+
+          private int roll no;
+          private String name;
+          private int marks;
+          
+          
+          public int getRollNo() {
+		                  return rollNo;
+                      	}
+          public void setRollNo(int rollNo) {
+		               this.rollNo = rollNo;
+	                              }
+	        public String getName() {
+  
+		                return name;
+    
+	                             }
+  
+       	public void setName(String name) {
+  
+	              	this.name = name;
+	                 }
+       public int getMarks() {
+		
+		                 return marks;
+                     }
+           public void setMarks(){
+                    if(marks>=0 && marks<=100)
+                         this.marks=marks;
+                     else 
+                          throw new illegalArgumentException();
+  
+          
+       }
+       
+   ---------------------------------------------------------------------------------
+   Create another class with main in the same package of the above class
+   
+   public class MainClass{
+     
+     public static void main(String[] args){
+     
+       Student obj = new Student();    
+           obj.setRollno(02);
+           obj.setName("manoj");
+           obj.setmarks(56);
+           
