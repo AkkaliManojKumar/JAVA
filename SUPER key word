@@ -1,0 +1,31 @@
+// child inherits everthing frm parent except private and constructor
+---------------------------------------------------------------------------------------------
+
+class parent{
+	
+	public hari(){
+  syso("parent class default constructor");
+  }
+  
+	public parent(int x) {
+		System.out.println("parent const "+x);
+		}
+}
+
+class child extends parent{
+
+	public child() {
+		super(); //calls the constructor of parent defaultly
+		super(50); // here has an argument so need to call with super keyword;
+		System.out.println("child const");
+		
+	}
+	
+	}
+
+public class Day6Demos {
+	public static void main(String[] args) {
+		child c=new child();
+	
+}
+}
