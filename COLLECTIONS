@@ -1,0 +1,92 @@
+LIST ------ORDERED,CONTAINS DUPLICATE
+
+---------------------------------VECTOR-------------------------------
+
+import java.util.Vector;           // NEED TO IMPORT VECT
+
+public class Day6Demos {
+
+	public static void main(String[] args) {
+	
+		
+		Vector v=new Vector(); ==== BEFORE JAVA 1.5---------------> AFTER 1.5 // Vector<Integer> v = new Vector<Integer>();   // it only allows the integer values to it
+		
+		                                                                       // only homogeneous elements allowed inter values
+		int x=50;                                                               // we cant put int in place of Integer it only allows wrapper classes
+		String y="hellow world";
+		float z=10.5f;
+		
+		v.add(x);
+		v.add(y);
+		v.add(z);
+    System.out.println(v);
+		
+		v.insertElementAt("hell", 2);
+
+		System.out.println(v);
+
+		
+		v.remove("hell");
+		System.out.println(v);
+    
+    v.remove(50)// wrong    // here 50 is taken as integer will is taken as index
+    Integer k = 50;    //k is in object format
+    v.remove(k);       //correct coz every thing is in object format in collections integers cannot be allowed
+
+	}
+}
+------------------------------------------------- if we want hetero geneous elements use <Object>------------------------------
+
+Vector <object> v= new Vector<Object>();    // to add hetro geneous elements use object keyword
+v.add(10);
+v.add("hello");
+v.add("106.8f);
+v.add('c');
+
+----------------------------------------------DIFFRENCE BETWEEN VECTOR AND ARRAYLIST---------------------------------------------
+functionality of both is same 
+
+diffrence is 
+
+ArrayList -----> threadUnsafe & Unsyncronised & Fast   ( rest all are same as vector for array list like written above)
+
+Vector -------> Threadsafe & Synchronised & slow                      EX: ATM two credicards  usage & one wash room two people usage
+
+-----------------------------------------------String buffer and String Builder ----------------------------------------------
+functionality is same but the diff is 
+STRINGBUILDER --------------------->  thread Unsafe & FAST
+STRINGbuffer --------------------> threadsafe  & slow
+-------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------doing iteration USING ITERATOR-----------------------------------------------
+Vector <Integer> v= new Vector<Object>();
+V.add(10);
+v.add(34);
+v.add(23);
+
+
+// here we are iterating collections using Iterator
+
+Iterator<Integer> VItr =v.iterator();                          // we can do all this functions below with iterator
+		
+		while(VItr.hasNext())
+		{
+			
+			int next=vItr.next();
+			System.out.println(next);
+			System.out.println("plus 10 "+(next+10));
+			
+			if(next%2==0)
+				System.out.println("even");
+			else
+				System.out.println("odd");
+		}
+    
+    
+    ------------------------------------------------------- doing iteration USING ENUMARATOR ----------------------------------------------
+    
+    only diffrence beteween iterator and enumarator is that
+    
+    iterator ----------- has remove method
+    
+    enumarator -------------------> no remove method
