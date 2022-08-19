@@ -1,0 +1,98 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+--------------------
+class parent
+{
+	
+	void abc() throws IOException{
+		
+	}
+	
+	void xyz() throws FileNotFoundException{
+		
+	}
+}
+---------------------------
+class child extends parent{
+	
+	// child cannot throw new checked exception
+	
+//	@Override
+//	void abc() throws ClassNotFoundException
+//	{
+//		
+//	}
+	
+//	@Override
+//	void abc() throws NullPointerException, IllegalArgumentException,ArrayIndexOutOfBoundsException
+//	{
+//		
+//	}
+	
+	
+	@Override
+	void abc() throws FileNotFoundException
+	{
+		
+	}
+
+	
+void xyz() throws IOException{
+		
+	}
+	
+}
+
+
+
+
+public class Day6Demos {
+
+	public static void main(String[] args) {
+	
+
+}
+
+// exception : abnormal condition occurs during program execution
+//and terminates the flow of program
+
+//exception handling : protects d program frm being terminated
+//try , catch , finally , throw , throws 
+
+------------------------------------------------------------------------------------CUSTOM EXCEPTION CREATION----------------------------------------------------------------------
+class InvalidMarksExeption extends Exception{                              // InvalidMarksExeption tHIS IS THE NEW EXCEPTION I WANT TO CREATE
+	
+
+	InvalidMarksExeption(String message)
+	{
+		super(message);                                                 // parent class const with arg is called here
+	}
+}
+
+
+class EnterMarks{
+	EnterMarks(int marks) throws InvalidMarksExeption
+	{
+		if(marks < 0 || marks > 100)
+			throw new InvalidMarksExeption("ye kya marks hain ??");
+		
+	}
+	
+}
+
+
+
+public class Day6Demos {
+
+	public static void main(String[] args) {
+	
+	try {
+		EnterMarks e=new EnterMarks(-40);
+	} catch (InvalidMarksExeption e) {
+		e.printStackTrace();
+	}
+	System.out.println("DONE");
+		
+	}
+
+}
