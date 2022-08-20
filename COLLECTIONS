@@ -88,5 +88,8 @@ Iterator<Integer> VItr =v.iterator();                          // we can do all 
     only diffrence beteween iterator and enumarator is that
     
     iterator ----------- has remove method
-    
+   
+    if(next==10)
+			VItr.remove();
+ ========================================   
     enumarator -------------------> no remove method
