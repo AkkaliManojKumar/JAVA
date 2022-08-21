@@ -1,0 +1,136 @@
+// >>> Alternative for the lambda expression is METHOD REFERENCE
+
+// method reference is also should have functional interface that means it shold have only one abstract method
+
+-------------------------------------------------------------------------
+interface TestInterface{
+
+	void abc();
+
+}
+
+
+
+
+public class Day9Demos {
+
+	public static void myMethod(){        // this my method half override abc method body of mymethod is given to abc() method
+  
+		System.out.println("my method ");
+	}
+	
+	public static void main(String[] args) {
+		
+		TestInterface i=Day9Demos::myMethod;            // this is method reference Day9Demos is written coz it my method is static static methods can be called using class name
+		i.abc();
+		
+	}
+
+}
+
+
+----------------------------------------------------------- method refrence can have static method  ------------------------
+interface TestInterface{
+	void abc(int x);
+	//void abc1();
+}
+
+
+
+
+public class Day9Demos {
+
+	private static int myMethod(int x){                   // type of arguments should be same in mymethod() and ABC()
+                                                         // mymethod can be static also
+		System.out.println("my method ");                   //@overriding method accesibilty cannot be less BUT here we can also write private decrease assesbility 
+		return 100;
+	}
+	
+	public static void main(String[] args) {
+		
+		TestInterface i=Day9Demos::myMethod;
+		i.abc();
+		
+	}
+  
+  ------------------------------------------------------- method reference can also have non static methods -------------------------------------
+  
+  
+interface TestInterface {
+
+	void abc();
+}
+
+public class Day9Demos {
+
+	private  int myMethod(){
+		System.out.println("my method ");
+		return 100;
+	}
+	
+	public static void main(String[] args) {
+		
+		Day9Demos d=new Day9Demos();
+		TestInterface i=d::myMethod;
+		--------[OR]----------
+    //TestInterface i=new Day9Demos()::myMethod;
+		
+		i.abc();
+		
+	}
+
+}
+--------------------------------------------- by using construtor also we can override the interface method -----------------------------
+
+interface TestInterface{
+	void abc();
+	//void abc1();
+}
+
+
+
+
+public class Day9Demos {
+
+	Day9Demos(){                               // instead of my method we have written main class constructorthis will dooooo
+		System.out.println("my method ");
+
+	}
+	
+	public static void main(String[] args) {
+    
+		TestInterface i=Day9Demos::new;	          // just write new keyword in place of mymethod we get and compiler understands we are calling that method
+		i.abc();
+		
+	}
+
+}
+
+}
+------------------------------------------------------ suing 
+
+import java.util.ArrayList;
+
+public class Day9Demos {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> test=new ArrayList<String>();
+		
+		test.add("abc");
+		test.add("abc");
+		test.add("bbb");
+		test.add("aaa");
+		test.add("abc");
+
+		
+		test.forEach((x)->{System.out.println(x);});     // for each using LAMBDA expression
+    
+		System.out.println("-----------");
+		
+		
+		test.forEach(System.out::println);    // *** for Each using Method Reference
+		
+	}
+
+}
