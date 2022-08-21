@@ -1,0 +1,120 @@
+//The target type of this expression must be a functional interface
+
+//******* functional interface : interface with 1 abstract method 
+
+// >>>>>> for functional interface lambda expressions can be applied
+
+
+-------------------------------------------------------------------------------   
+
+@FunctionalInterface               // ensures below interface is functional
+interface TestInterface{
+
+	void disp();           // only one abstract method
+	
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+		TestInterface i= ()->{
+			
+			System.out.println("disp meth with lambda");
+		};
+	
+		i.disp();
+		
+
+		
+	}
+
+}
+
+--------------------------- lambda expression giving argument as an input -----------------------------------------------------
+
+@FunctionalInterface // ensures below interface is functional
+interface TestInterface{
+
+	void disp(String msg);            // here i can give argument also
+
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+//		TestInterface i= (String msg)->{             // we can write same type coz we are overriding 
+//			                                           // we may or maynot write the same argument name msg or x or y type shoild be same 
+//			System.out.println("disp meth with lambda "+msg);
+//		};
+//	
+//		i.disp("HEllo world");
+//		
+
+		
+	TestInterface i= (msg)->{                                // OR we can only write argument java can understand it 
+			                                                     // we can also write msg or x or y or anything we want
+			System.out.println("disp meth with lambda "+msg);
+		};
+	
+		i.disp("HEllo world");
+		
+	
+		
+		
+		
+	}
+
+}
+
+---------------------------------------------------------------- Lambda EXpression function having return  ------------------------------------------------------
+
+
+@FunctionalInterface // ensures below interface is functional
+interface TestInterface{
+	float converter(float dollar);
+
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+		
+	TestInterface i= (dollar)->{
+			float res=(dollar*80);
+			//System.out.println(" Rupees "+res);
+			return res;
+		};
+	
+		float x= i.converter(10);
+		System.out.println(x +"Rupees"); 
+	
+		
+		
+		
+	}
+
+}
+
+---------------------------------  simpler syntax than above lambda expression -----------------------------------
+
+@FunctionalInterface // ensures below interface is functional
+interface TestInterface{
+	float converter(float dollar);
+
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+		
+	TestInterface i= (dollar)->(dollar*80);      // *** no need to write the peranthasis just write logic
+  
+		float x= i.converter(10);
+		System.out.println(x +"Rupees"); 
+	}
+
+}
