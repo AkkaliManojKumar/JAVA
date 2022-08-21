@@ -1,0 +1,64 @@
+interface TestInterface{                                    // ****THIS IS THE TRADITIONAL WAY OF WRITING INTERFACE METHOD OVERRIDING BEFORE JAVA 1.8
+	void disp();
+}
+
+class TestClass implements TestInterface{
+	@Override
+	public void disp() {
+		System.out.println("disp meth");
+	}
+}
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+		TestInterface i=new TestClass();
+		i.disp();
+		
+	}
+
+}
+
+---------------------------------------------------------------------- Ananamous class ------------------------------------------------
+
+
+interface TestInterface{
+	void disp();
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		
+		TestInterface i=new TestInterface() {               //***  Anonomous class 
+			                                                  //this class is invisible
+			@Override                                         // we can override any no of methods using anonomous class
+			public void disp() {
+			System.out.println("disp meth what ??");	
+			}
+		};
+		i.disp();
+		
+	}
+
+}
+
+
+------------------------------------------------------java 8 lambda ------------------------------------------------- 
+
+interface TestInterface{
+	void disp();
+}
+
+
+public class Day9Demos {
+	public static void main(String[] args) {
+		TestInterface i= ()->{			                          // this is the shortest syntax of above ananomous class called lambda 
+			System.out.println("disp meth with lambda");         // this can override only one method       multiple methods not allowed
+		};
+	
+		i.disp();
+		
+	}
+
+}
