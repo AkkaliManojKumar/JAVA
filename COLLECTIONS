@@ -1,6 +1,17 @@
+             ----------> queue
+            |
+Collections ------> list
+            |
+	    ----------> map
+	    
 LIST ------ORDERED,CONTAINS DUPLICATE
+list --->1)Arraylist
+         2) vector
+-------------------------------------------------------------------------------------------------------------------------------
 
----------------------------------VECTOR-------------------------------
+
+
+---------------------------------  VECTOR  -------------------------------
 
 import java.util.Vector;           // NEED TO IMPORT VECT
 
@@ -21,12 +32,12 @@ public class Day6Demos {
 		v.add(z);
     System.out.println(v);
 		
-		v.insertElementAt("hell", 2);
+		v.insertElementAt("hell", 2);    // insert method
 
 		System.out.println(v);
 
 		
-		v.remove("hell");
+		v.remove("hell");     // remove method
 		System.out.println(v);
     
     v.remove(50)// wrong    // here 50 is taken as integer will is taken as index
@@ -35,7 +46,7 @@ public class Day6Demos {
 
 	}
 }
-------------------------------------------------- if we want hetero geneous elements use <Object>------------------------------
+-------------------------------------------------  if we want hetero geneous elements use <Object>  ------------------------------
 
 Vector <object> v= new Vector<Object>();    // to add hetro geneous elements use object keyword
 v.add(10);
@@ -43,33 +54,35 @@ v.add("hello");
 v.add("106.8f);
 v.add('c');
 
-----------------------------------------------DIFFRENCE BETWEEN VECTOR AND ARRAYLIST---------------------------------------------
+// different data type of elements are allowed using object type 
+
+----------------------------------------------    DIFFRENCE BETWEEN VECTOR AND ARRAYLIST    ---------------------------------------------
 functionality of both is same 
 
-diffrence is 
+diffrence is
 
-ArrayList -----> threadUnsafe & Unsyncronised & Fast   ( rest all are same as vector for array list like written above)
+ArrayList -----> thread-Unsafe & Un-syncronised & Fast   ( rest all are same as vector for array list like written above)
 
 Vector -------> Threadsafe & Synchronised & slow                      EX: ATM two credicards  usage & one wash room two people usage
 
------------------------------------------------String buffer and String Builder ----------------------------------------------
+-----------------------------------------------   String buffer and String Builder   ----------------------------------------------
 functionality is same but the diff is 
 STRINGBUILDER --------------------->  thread Unsafe & FAST
 STRINGbuffer --------------------> threadsafe  & slow
 -------------------------------------------------------------------------------------------------------------
 
-------------------------------------------------------------doing iteration USING ITERATOR-----------------------------------------------
+------------------------------------------------------------   doing iteration USING ITERATOR  ----------------------------------------------
 Vector <Integer> v= new Vector<Object>();
-V.add(10);
+v.add(10);
 v.add(34);
 v.add(23);
 
 
-// here we are iterating collections using Iterator
+// here we are iterating collections using Iterator ( v= collection variable )
 
-Iterator<Integer> VItr =v.iterator();                          // we can do all this functions below with iterator
+Iterator<Integer> VItr = v.iterator();                          // we can do all this functions below with iterator
 		
-		while(VItr.hasNext())
+		while(VItr.hasNext())  //--> it checks weather element has next or not if yes then it will proceed to nexte
 		{
 			
 			int next=vItr.next();
