@@ -1,0 +1,71 @@
+//  *** actually interface should have only abstract methods BUT
+// interfaces with-out abstract method can also allowed like --> default method can also be allowed in interface
+
+@FunctionalInterface
+interface TestInterface
+{
+
+	void disp();   //---> abstract method
+	
+	default void test()     // ----> default method
+	{
+		
+		System.out.println("def meth test in interface");
+	}
+	
+}
+
+
+public class Day9Demos {
+
+	public static void main(String[] args) {
+		
+		TestInterface i=()->{ System.out.println("disp"); };
+		
+		i.disp();
+		i.test();
+		
+	}
+
+}
+
+
+--------------------------------
+////** if  ypu want to make a method that should not overriden make that method to static in INterfaces
+
+
+@FunctionalInterface
+interface TestInterface
+{
+
+	void disp();
+	
+	static  void test()     //--> THIS METHOD CANNOT BE OVERRIDED COZ IT IS STATIC IN INTERFACE
+	{
+			System.out.println("static meth test in interface");
+	}
+	
+}
+
+
+public class Day9Demos {
+
+	public static void main(String[] args) {
+		
+		TestInterface i = new TestInterface() {    // object created for an interface
+			
+			@Override
+			public void disp() {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
+		
+		
+		
+		TestInterface.test();
+		i.disp();
+	}
+
+}
