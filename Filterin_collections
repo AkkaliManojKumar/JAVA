@@ -39,6 +39,12 @@ public class Day9Demos {
 		
 		test.stream().filter(x->(x>10)).forEach(x->{System.out.println(x);} );  // print the numbers greater than 10
     test.stream().filter(x->(x%2==0)).forEach(x->{System.out.println(x);} ); // print the even numbers
+    
+    -----------------------  using stream function in the List ------------------------------------------- 
+    
+               //List<Integer> gt10= test.stream().filter(x->(x>10)).collect(Collectors.toList());
+	
+		ArrayList<Integer> gt10= (ArrayList<Integer>) test.stream().filter(x->(x>10)).collect(Collectors.toList());
 
 		System.out.println("-------");
 		test.forEach(x->{System.out.println(x);});
