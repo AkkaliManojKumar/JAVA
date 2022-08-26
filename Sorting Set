@@ -67,7 +67,7 @@ public class Day8Demos {
 		Day8Demos d8=new Day8Demos();
 		HashSet<Integer> hset=d8.getElements();
 		
-		TreeSet<Integer> tset=new TreeSet<>();
+		TreeSet<Integer> tset=new TreeSet<>();    /// ****** converting hashset to treeset
 		tset.addAll(hset);
 		
 		System.out.println(tset);
@@ -95,7 +95,7 @@ public class Day8Demos {
 	public HashSet<Student> getStudents(){
 		
 		HashSet<Student> mySet=new HashSet<>(); 
-		mySet.add(new Student(18, "Virat", 99));
+		mySet.add(new Student(18, "Virat", 99));           //**** new student() is an object construtor can pass parameters
 		mySet.add(new Student(7, "Dhoni", 60));
 		mySet.add(new Student(45, "Rohit", 90));
 		mySet.add(new Student(1, "Rahul", 70));
@@ -104,9 +104,39 @@ public class Day8Demos {
 		mySet.add(new Student(21, "Sachin", 88));
 		mySet.add(new Student(22, "Jaddu", 61));
 		return mySet;
+		---------------------------------------
+		                [OR]
+		---------------------------------------
+		mySet.add(obj1);  
+		mySet.add(obj2);  
+		mySet.add(obj3);  
+		mySet.add(obj4);  
+		mySet.add(obj5);  
+		Day8Demos obj1 = new Day8Demos(18,"virat,99);
+		Day8Demos obj2= new Day8Demos(7,"dhoni,60);
+		Day8Demos obj3 = new Day8Demos(45,"Rhoni",90);
+		Day8Demos obj4 = new Day8Demos(");
+		Day8Demos obj5= new Day8Demos(");
+		
 	}
 	
+------------------------------------------------------------
+
+public class Namesort implements Comparator<student> {
+
+	@Override
+	public int compare(student o1, student o2) {
+		// TODO Auto-generated method stub\
+		
+		
+		return o1.getName().compareTo(o2.getName());
+	}
 	
+
+}
+
+	
+--------------------------------------------------------------------	
 	public static void main(String[] args) {
 
 		Day8Demos d8=new Day8Demos();
