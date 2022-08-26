@@ -12,7 +12,7 @@ class TestClass implements TestInterface{
 public class Day9Demos {
 	public static void main(String[] args) {
 		
-		TestInterface i=new TestClass();
+		TestInterface i=new TestClass();  
 		i.disp();
 		
 	}
@@ -46,7 +46,7 @@ public class Day9Demos {
 
 ------------------------------------------------------java 8 lambda ------------------------------------------------- 
 
-interface TestInterface{
+interface TestInterface{                   // functional interafces are there for lambda expressions
 	void disp();
 }
 
@@ -56,6 +56,9 @@ public class Day9Demos {
 		TestInterface i= ()->{			                          // this is the shortest syntax of above ananomous class called lambda 
 			System.out.println("disp meth with lambda");         // this can override only one method       multiple methods not allowed
 		};
+		[OR]
+		
+		TestInterface i = ()->(System.out.print("hello"));  //**** to write only one statement we use this only curved brackets
 	
 		i.disp();
 		
