@@ -82,6 +82,18 @@ public class Day8Demos {
 
 }
 
+--------------------------------------------------------- entr set key value pair ------------------------------------
+Map<Integer,String> v = new HashMap<Integer,String>();
+	v.put(2,"manoj");
+	v.put(74555,"maguvah");
+	v.put(15,"jambu");
+	
+
+	System.out.println(v.keySet());
+	for(Map.Entry i:v.entrySet()) {
+		System.out.println(i.getKey()+" "+i.getValue());
+	}
+
 
 ----------------------------------- Map get the details of car by the name of   -------------------------------------------------------------------------------------- 
 
