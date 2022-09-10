@@ -71,7 +71,7 @@ class InvalidMarksExeption extends Exception{                              // In
 
 
 class EnterMarks{
-	EnterMarks(int marks) throws InvalidMarksExeption
+	EnterMarks(int marks) throws InvalidMarksExeption               ///----->>> EnterMarks is a constructor
 	{
 		if(marks < 0 || marks > 100)
 			throw new InvalidMarksExeption("ye kya marks hain ??");
@@ -87,7 +87,7 @@ public class Day6Demos {
 	public static void main(String[] args) {
 	
 	try {
-		EnterMarks e=new EnterMarks(-40);
+		EnterMarks e=new EnterMarks(-40);     //----> constructor calling
 	} catch (InvalidMarksExeption e) {
 		e.printStackTrace();
 	}
