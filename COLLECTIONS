@@ -103,9 +103,19 @@ Iterator<Integer> VItr = v.iterator();                          // we can do all
     iterator ----------- has remove method
    
     if(next==10)
-			VItr.remove();
+			|||||||||||||||||||||||||VItr.remove(); ------> this remove method will remove all elements in teh collection variable
  ========================================   
-    enumarator -------------------> no remove method
+   ||||||||||||||||||||||||| enumarator -------------------> no remove method
+    
+ Enumeration<Integer> itr =Collections.enumeration(v);
+
+while(itr.hasMoreElements()){
+	int next = itr.nextElement();
+	if(next%2==0)
+	{
+	System.out.println(next);
+	}
+}
     
    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
