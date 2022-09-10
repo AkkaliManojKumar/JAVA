@@ -1,0 +1,23 @@
+----->>>>>>  Java TreeMap class is a red-black tree based implementation. It provides an efficient means of storing key-value pairs in sorted order.
+
+
+Map<Integer,String> map=new TreeMap<Integer,String>();    
+      map.put(100,"Amit");    
+      map.put(102,"Ravi");    
+      map.put(101,"Vijay");    
+      map.put(103,"Rahul");    
+        
+      for(Entry<Integr,String> m:map.entrySet()){    
+       System.out.println(m.getKey()+" "+m.getValue());    
+      }    
+      
+      
+      
+      output is keys are in sorted order
+      
+      =================================================================================================================================
+      
+      HASH table :
+      ===========
+     -->>>  Java Hashtable class contains unique elements.
+     -->>> Java Hashtable class doesn't allow null key or value.
