@@ -53,8 +53,8 @@ public class Day6Demos {
 
 
 
-//Comparable -> compareTo(1 arg)
-//Comparator -> compare(2 arg)
+//Comparable -> compareTo(1 arg) ---------->> comparable do natural sorting.
+//Comparator -> compare(2 arg) ----------->>> comparator is for other than natural sorting.(Userdefined sorting)
 
 public class Student{
 
